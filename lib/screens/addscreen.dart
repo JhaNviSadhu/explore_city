@@ -97,6 +97,8 @@ class _AddScreenState extends State<AddScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: false,
+      extendBodyBehindAppBar: false,
       appBar: AppBar(
         title: Text(
           (widget.isEdit) ? "Edit City" : "Add City",
@@ -105,7 +107,7 @@ class _AddScreenState extends State<AddScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10.0, left: 15, right: 15),
-        child: Column(
+        child: ListView(
           children: [
             Row(
               children: [
@@ -188,10 +190,12 @@ class _AddScreenState extends State<AddScreen> {
                 controller: _cityDescriptionController,
                 hintText: 'Discription',
                 hintTextStyle: Dosis.kTextStyleNormal,
-                maxLines: 10,
+                maxLines: 4,
               ),
             ),
-            const Spacer(),
+
+            SizedBox(height: 30),
+            // const Spacer(),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -203,7 +207,7 @@ class _AddScreenState extends State<AddScreen> {
                 onAddClick();
               },
               child: Text(
-                (widget.isEdit) ? "Edit City" : "Add City",
+                (widget.isEdit) ? "Save City" : "Add City",
                 style: DosisSemiBold.kTextStyle18Normal,
               ),
             ),
