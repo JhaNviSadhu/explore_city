@@ -31,7 +31,7 @@ class _AddScreenState extends State<AddScreen> {
     Future.delayed(Duration(seconds: 2), () {
       return items = _cityController.stateList;
     });
-
+    _cityController.stateName.value = widget.city?.stateName ?? '';
     if (widget.isEdit) {
       _cityImageUrlController.text = widget.city?.imageUrl ?? '';
       _cityNameController.text = widget.city?.cityName ?? '';
