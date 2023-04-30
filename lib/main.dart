@@ -3,7 +3,6 @@ import 'package:explore_city/screens/home.dart';
 import 'package:explore_city/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'db/db_helper.dart';
 
 Future<void> main() async {
